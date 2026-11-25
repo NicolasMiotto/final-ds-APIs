@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'drf_spectacular',
     'exoplanetas_api',
 ]
 
@@ -83,6 +84,21 @@ DATABASES = {
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
+}
+
+# Django REST Framework
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 20,
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+# Documentação Swagger (drf-spectacular)
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'API de Exoplanetas',
+    'DESCRIPTION': 'API REST com dados de 5.250 exoplanetas catalogados: CRUD completo e consultas personalizadas.',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
 }
 
 # Password validation

@@ -17,6 +17,7 @@ class Planeta(models.Model):
 
     class Meta:
         db_table = 'planetas'
+        managed = False  # tabela criada pelo database/db_exoplanetas.sql
 
     def __str__(self):
         return self.nome
